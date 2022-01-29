@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+{% for don in connect %}
+<div class="container">
+    <div class="col-md-3">{{ don.mem_id }}</div>
+    <div class="col-md-3">{{ don.description }}</div>
+    <div class="col-md-3">{{ don.date }}</div>
+    <div class="col-md-3">{{ don.type }}</div>
+
+
+</div>
+    <a href="{% url 'deletecon' don.id %}">Delete</a>
+<hr>
+{% endfor %}
+</div>
+
+
+{% endblock %}

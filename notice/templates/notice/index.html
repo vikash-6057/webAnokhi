@@ -1,0 +1,44 @@
+{% extends 'base_admin.html' %}  
+{% block content %}
+<form method="POST" class="post-form" action="/noti" enctype="multipart/form-data">  
+        {% csrf_token %}  
+    <div class="container">  
+<br>  
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <h3>Enter Details</h3>  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Id:</label>  
+    <div class="col-sm-4">  
+      {{ form.eid }}  
+    </div>  
+  </div>   
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Title:</label>  
+    <div class="col-sm-4">  
+      {{ form.title }}  
+    </div>  
+  </div>  
+    <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Description:</label>  
+    <div class="col-sm-4">  
+      {{ form.description }}  
+  </div> 
+  <div class="form-group row">  
+    <label class="col-sm-2 col-form-label">Description:</label>  
+    <div class="col-sm-4">  
+      {{ form.files }}  
+  </div> 
+    <div class="form-group row">  
+    <label class="col-sm-1 col-form-label"></label>  
+    <div class="col-sm-4">  
+    <button type="submit" class="btn btn-primary">Submit</button>  
+    </div>  
+  </div>  
+    </div>  
+</form>  
+  
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+{% for don in donors %}
+<div class="container">
+    <div class="col-md-3">{{ don.name }}</div>
+    <div class="col-md-3">{{ don.message }}</div>
+    <div class="col-md-3">{{ don.amount }}</div>
+    <div class="col-md-3">{{ don.date }}</div>
+    <div class="col-md-3">{{ don.mob }}</div>
+    <div class="col-md-3">{{ don.trans_id }}</div>
+    <div class="col-md-3">{{ don.mode }}</div>
+    <div class="col-md-3">{{ don.mode }}</div>
+
+</div>
+    <a href="{% url 'deletedon' don.id %}">Delete</a>
+    <a href="{% url 'verify' don.id %}">Verify</a>
+<hr>
+{% endfor %}
+</div>
+
+
+{% endblock %}

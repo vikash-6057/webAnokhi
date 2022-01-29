@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+{% for don in member %}
+<div class="container">
+    <div class="col-md-3">APM{{ don.id }}</div>
+    <div class="col-md-3">{{ don.name }}</div>
+    <div class="col-md-3">{{ don.mail }}</div>
+    <div class="col-md-3">{{ don.loc }}</div>
+    <div class="col-md-3">{{ don.mob }}</div>
+    <div class="col-md-3">{{ don.batch }}</div>
+    <div class="col-md-3">{{ don.alum }}</div>
+    <div class="col-md-3">{{ don.about }}</div>
+
+
+
+</div>
+    <a href="{% url 'delmem' don.id %}">Delete</a>
+<hr>
+{% endfor %}
+</div>
+
+
+{% endblock %}

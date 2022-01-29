@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<a href="{% url 'event:addimage' %}">Add event image</a><br>
+<a href="{% url 'event:addevent' %}">Add event</a><br>
+<a href="{% url 'viewdon' %}">Donors</a><br>
+<a href="{% url 'add_news' %}">News</a><br>
+<a href="{% url 'add_team' %}">Team Members</a><br>
+<a href="{% url 'allconnect' %}">Connect</a><br>
+<a href="{% url 'event:addpro' %}">Program</a><br>
+<a href="{% url 'allmember' %}">Membership</a><br>
+<a href="{% url 'add_list' %}">Evening class</a><br>
+
+
+{% endblock %}

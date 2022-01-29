@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <h1>Add </h1>
+<form method="post" action="{% url 'add_news' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="date" name="date" required><br>
+    <input type="file" name="image" required><br>
+    <input type="text" name="title" required placeholder="title"><br>
+    <input type="text" name="desc" required placeholder="description..."><br>
+    <button type="submit">Add</button>
+
+</form>
+</div>
+
+<br><br>
+<div class="container">
+{% for new in news %}
+
+<h4>{{ new.title }}</h4>
+<a href="{% url 'del_news' new.id %}">Delete</a>
+<hr>
+{% endfor %}
+</div>
+{% endblock %}

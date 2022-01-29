@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<head>
+</head>
+<div id="titlebar" class="gradient"> </div>
+
+<!-- Container -->
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+
+			<div class="order-confirmation-page">
+				{% if success %}
+                    <div class="breathing-icon"><i class="icon-feather-check"></i></div>
+                    <div class="container" >
+                    	<img src="{% static 'images/thank.jpg' %}">
+                    </div>
+                    <div class="container" style="padding: 50px">
+                    	<h3>Your payment has been processed successfully.</h3><br><i> <h4 style="font-variant: unset;">Redirecting to HomePage in 7seconds.... <br></h4></i>
+				    <p>** Your Contribution means a lot to Anokhi Pehel! <br> ** Your contribution will help us taking this initiative of spreading knowledge to another level.</p>
+				</div>
+				    
+				    <!-- enter url to be directed after success,redirecting in 7secs//-->
+
+
+				    <script>
+        			var timer = setTimeout(function() {
+            		window.location="{% url 'home' %}"
+        			}, 7000);
+    				</script>
+
+    				</div>
+    			</div>
+
+				{% else %}
+                    <div class="breathing-icon"><i class="icon-feather-check"></i></div>
+                    <div class="container" >
+                    	<img src="{% static 'images/failed.jpg' %}">
+                    </div>
+                    <div class="container" style="padding: 50px">
+                    	<h3>Please try again...</h3><br><i> <h4 style="font-variant: unset;">Redirecting to Donate Page in 5seconds.... <br></h4></i>
+				    <p>** Your Contribution means a lot to Anokhi Pehel! <br> ** Your contribution will help us taking this initiative of spreading knowledge to another level.</p>
+				</div>
+
+				        <script>
+        				var timer = setTimeout(function() {
+            			window.location="{% url 'donate' %}"
+        				}, 3000);
+    					</script>
+
+                {% endif %}
+			</div>
+
+		</div>
+	</div>
+</div>
+{% endblock %}

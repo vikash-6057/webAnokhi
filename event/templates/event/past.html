@@ -1,0 +1,50 @@
+
+
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content%}
+<div class="container-fluid" style="background-image:url({% static 'images/about-bg.jpg' %});height: 150px;width: 100%;">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="entry-title" style="text-align: center;margin-top: 50px;color:black;">PAST EVENTS</h1>
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div>
+<main role="main">
+<div class ="container">
+
+<br />
+<br />
+<hr />
+
+<div class="row mb-2">
+{% for past in past.all %}
+  <!--<div class="row mb-2">  -->
+
+    <div class="col-md-6">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">{{ past.title }}</strong>
+          {{past.pub_date_pretty}}
+          <p class="card-text mb-auto">{{ past.summary }}</p>
+          <a href="{% url 'event:detail' past.id %}" class="stretched-link">Continue reading</a>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img class="img-fluid" height="250" width="250" src="{{ past.image.url}}">
+        </div>
+      </div>
+    </div>
+  
+{% endfor %}
+</div>
+
+</main>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+{% endblock %}
+</html>
+
+

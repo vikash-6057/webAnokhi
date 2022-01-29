@@ -1,0 +1,203 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Anokhi Pehel-MNNIT</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Anokhi Pehel" content="Anokhi Pehel MNNIT">
+
+        <meta name="keywords" content="Anokhi Pehel MNNIT">
+        <meta name="author" content="Ayush Srivastava, Nishant Kumar">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- FontAwesome CSS -->
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'images/5.png' %}">
+    <!-- ElegantFonts CSS -->
+    <link rel="stylesheet" href="{% static 'css/elegant-fonts.css' %}">
+
+    <!-- themify-icons CSS -->
+    <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="top-header-bar">
+            <div class="container">
+                <div class="row flex-wrap justify-content-center justify-content-lg-between align-items-lg-center">
+                    <div class="col-12 col-lg-4 d-none d-md-flex flex-wrap justify-content-center justify-content-lg-start mb-3 mb-lg-0">
+                        <div class="header-bar-email">
+                            ANOKHI PEHEL MNNIT
+                        </div><!-- .header-bar-email -->
+
+                        <!-- .header-bar-text -->
+                    </div><!-- .col -->
+
+                    <div class="col-12 col-lg-8 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
+                        <div class="donate-btn">
+                            <a href="{% url 'connect' %}">Connect With Us</a>
+                        </div>
+                        <div class="donate-btn" style="padding-left:10px">
+                            <a href="{% url 'donate' %}">Donate Now</a>
+                        </div>
+                        {% if user.is_authenticated %}
+                        <div class="donate-btn" style="padding-left:10px">
+                            <a href="javascript:{document.getElementById('logout').submit()}">Logout</a>
+                            <form id="logout" method="post" action="{% url 'users:logout' %}">
+           {% csrf_token %}
+           <input type="hidden"/>
+         </form>
+                        </div>
+                        <div class="donate-btn" style="padding-left:10px">
+                            <a href="{% url 'users:home' %}">Admin Home</a>
+                        </div>
+                        {% endif %}<!-- .donate-btn -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .top-header-bar -->
+
+        <div class="nav-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
+                        <div class="site-branding d-flex align-items-center">
+                           <img class="d-block" width="180" height = "150" src="{% static 'images/anokhilogo.png' %}" alt="logo">
+                        </div><!-- .site-branding -->
+
+                        <nav class="site-navigation d-flex justify-content-end align-items-center">
+                            <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-content-center">
+                                <li ><a href="{% url 'home' %}">Home</a></li>
+                                <li><a href="{%url 'event:program' %}">Program</a></li>
+                               <li><a href="{%url 'evening' %}">Evening Class</a></li>
+                                <li><a href="{% url 'event:upcoming' %}">Upcoming Events</a></li>
+                                
+                                <li><a href="{% url 'event:past' %}">Past Events</a></li>
+                                
+
+
+                                
+                                <li><a href="{% url 'contact' %}">Contact</a></li>
+                                <li><a href="{% url 'team' %}">Our Team</a></li>
+
+                                <li><a href="{% url 'antyodaya' %}">Antyodaya</a></li>
+                            </ul>
+                        </nav><!-- .site-navigation -->
+
+                        <div class="hamburger-menu d-lg-none">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div><!-- .hamburger-menu -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .nav-bar -->
+    </header><!-- .site-header -->
+
+<div class="container">
+{% if messages %}
+{% for message in messages %}
+<div class="alert alert-{{ message.tags }}">
+  {{ message }}
+</div>
+{% endfor %}
+{% endif %}
+</div>
+     {% if user.is_authenticated %}
+    <h4>Please fill all fields in the form to avoid errors and site crash.</h4>
+    <h4>After adding an object never go back.Always click on Admin Home on top.</h4>
+    {% endif %}
+{% block content %}
+{% endblock %}
+
+
+<!-- footer content-->
+
+  <footer class="site-footer">
+        <div class="footer-widgets">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="foot-about">
+                            <h2><a class="foot-logo" href="#"><img width="180" height="140" src="{% static 'images/5.png' %}" alt=""></a></h2>
+
+                            <p>Anokhi pehel is an initiative started by MNNITians. Its an organisation which helps in upliftment of the society. It is involved in many social activities particularly providing free education to underprivileged  children.</p>
+
+                            <ul class="d-flex flex-wrap align-items-center">
+                                <li><a href="https:\\facebook.com\anokhipehel"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https:\\instagram.com\anokhipehel"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div><!-- .foot-about -->
+                    </div><!-- .col -->
+
+                    <div class="col-12 col-md-6 col-lg-3 mt-5 mt-md-0">
+                        <h2>Useful Links</h2>
+
+                        <ul>
+                            <li><a href="{% url 'donate' %}">Donate</a></li>
+                            <li><a href="{% url 'connect' %}">Get involved</a></li>
+                            <li><a href="{% url 'event:program' %}">Our working</a></li>
+                            <li><a href="{% url 'home' %}">Achievements</a></li>
+
+                        </ul>
+                    </div><!-- .col -->
+
+
+
+                    <div class="col-12 col-md-6 col-lg-3 mt-5 mt-md-0">
+                        <div class="foot-contact">
+                            <h2>Contact</h2>
+
+                            <ul>
+                                <li><i class="fa fa-phone"></i><span>9580259378</span></li>
+                                <li><i class="fa fa-envelope"></i><span>anokhipehel@mnnit.ac.in</span></li>
+                                <li><i class="fa fa-map-marker"></i><span>MNNIT Allahabad, Teliarganj ,Prayagraj - 211004</span></li>
+                            </ul>
+                        </div><!-- .foot-contact -->
+
+                        <div class="subscribe-form">
+                            <!--<form class="d-flex flex-wrap align-items-center">
+                                <input type="email" placeholder="Your email">
+                                <input type="submit" value="send"
+                            </form><!-- .flex -->
+                        </div><!-- .search-widget -->
+                    </div><!-- .col -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .footer-widgets -->
+
+        <div class="footer-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+<!--Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved-->MNNIT - Anokhi Pehel
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    </div><!-- .col-12 -->
+                </div><!-- .row -->
+            </div><!-- .container -->
+        </div><!-- .footer-bar -->
+    </footer><!-- .site-footer -->
+
+    <script type='text/javascript' src="{% static 'js/jquery.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/jquery.collapsible.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/swiper.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/jquery.countdown.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/circle-progress.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/jquery.countTo.min.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/jquery.barfiller.js' %}"></script>
+    <script type='text/javascript' src="{% static 'js/custom.js' %}"></script>
+
+</body>
+</html>

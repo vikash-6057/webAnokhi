@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block content%}
+<main role="main">
+<div class ="container">
+<h1 class="text-center pt-3">FACULTY MEMBERS</h1>
+<br />
+<br />
+  <div class="row mb-2">
+    <div class="col-md-3">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Dr. Rajeev Tripathi</strong>
+
+          <p class="card-text mb-auto">Director MNNIT</p>
+          <p class="card-text mb-auto">Professor ECED</p>
+        <br>
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img  height="200px" width="200px" src="{% static 'images/dir.jpg' %}">
+        </div>
+      </div>
+    </div>
+  <div class="col-md-3">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Dr. Basant Kumar</strong>
+
+          <p class="card-text mb-auto">Associate Professor ECED Faculty In-charge-Anokhi Pehel</p>
+
+
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img  height="200px" width="200px" src="{% static 'images/bas.jpg' %}">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Dr. Animesh Ojha</strong>
+
+          <p class="card-text mb-auto">HOD Physics<br> Faculty Member-Anokhi Pehel</p>
+
+
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img  height="200px" width="200px" src="{% static 'images/ojh.jpg' %}">
+        </div>
+       <!-- <div class="col p-4 d-flex flex-column position-static">
+
+          <p class="card-text mb-auto">09532830699</p>
+
+        </div>-->
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Dr. Arun Prakash</strong>
+
+          <p class="card-text mb-auto">Associate Professor ECED Faculty Member-Anokhi Pehel</p>
+
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img  height="200px" width="200px" src="{% static 'images/ar.jpeg' %}">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Dr. Manish Gupta</strong>
+
+          <p class="card-text mb-auto">Associate Professor Treasurer-Anokhi Pehel</p><br>
+
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img  height="200px" width="200px" src="{% static 'images/man.jpeg' %}">
+        </div>
+      </div>
+    </div>
+  </div>
+<h2> Core Team Members</h2>
+<hr />
+
+<div class="row mb-2">
+{% for team in team.all %}
+  <!--<div class="row mb-2">  -->
+
+    <div class="col-md-3">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">{{ team.title }}</strong>
+
+          <p class="card-text mb-auto">{{ team.description }}</p>
+
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img height="200px" width="200px" src="{{ team.image.url}}">
+        </div>
+      </div>
+    </div>
+
+{% endfor %}
+</div>
+  <br><br>
+  <h2> Web Team</h2>
+  <br>
+  <div class="row mb-2">
+  <div class="col-md-3">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Kashyap Nasit</strong>
+
+          <p class="card-text mb-auto">Final Year</p>
+
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img  height="200px" width="200px" src="{% static 'images/t1.jpeg' %}">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Ayush Srivastava</strong>
+
+          <p class="card-text mb-auto">Third Year</p>
+
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img  height="200px" width="200px" src="{% static 'images/t2.jpg' %}">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Nishant Kumar</strong>
+
+          <p class="card-text mb-auto">Third Year</p>
+
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img  height="200px" width="200px" src="{% static 'images/t3.jpg' %}">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">Tanishq Bansal</strong>
+
+          <p class="card-text mb-auto">Third Year</p>
+
+        </div>
+        <div class="col-auto d-none d-lg-block">
+          <img  height="200px" width="200px" src="{% static 'images/t4.jpeg' %}">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h2> Other Members</h2>
+<hr />
+
+<div class="row mb-2">
+{% for team in oth.all %}
+  <!--<div class="row mb-2">  -->
+
+    <div class="col-md-3">
+      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+        <div class="col p-4 d-flex flex-column position-static">
+          <strong class="d-inline-block mb-2 text-primary">{{ team.title }}</strong>
+
+          <p class="card-text mb-auto">{{ team.description }}</p>
+
+        </div>
+
+      </div>
+    </div>
+
+{% endfor %}
+</div>
+  <br>
+</main>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+{% endblock %}
+
+

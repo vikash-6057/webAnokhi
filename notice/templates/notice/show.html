@@ -1,0 +1,30 @@
+{% extends 'base_admin.html' %}  
+{% block content %}
+<table class="table table-striped table-bordered table-sm">  
+    <thead class="thead-dark">  
+    <tr>  
+        <th>ID</th>  
+        <th>Title</th>  
+        <th>Date</th>   
+        <th>Actions</th>  
+    </tr>  
+    </thead>  
+    <tbody>  
+{% for notices in notices %}  
+    <tr>  
+        <td>{{ notices.eid }}</td>  
+        <td>{{ notices.title }}</td>  
+        <td>{{ notices.created_date }}</td>
+        <td>  
+            <a href="/edit/{{ notices.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a>  
+            <a href="/delete/{{ notices.id }}">Delete</a>  
+        </td>  
+    </tr>  
+{% endfor %}  
+    </tbody>  
+</table>  
+<br>  
+<br>  
+<center><a href="/noti" class="btn btn-primary">Add New Record</a></center>  
+
+{% endblock %} 

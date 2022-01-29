@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>Add a event</h1>
+<div class="container">
+    <form method="post" action="{% url 'event:addevent' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="text" name="title" placeholder="title" required><br>
+        <input type="text" name="desc" placeholder="description" required><br>
+        <input type="date" name="date" required><br>
+        <input type="file" name="image" required><br>
+        <button type="submit" >Add</button>
+    </form>
+</div>
+
+<h23>All events</h23>
+<div class="container">
+    {% for ev in event %}
+    <div class="container">
+    <div class="col-md-3">{{ ev.title }}</div>
+    <div class="col-md-3">{{ ev.desc }}</div>
+    <div class="col-md-3">{{ ev.published_date }}</div>
+</div>
+    <a href="{% url 'event:deleteevent' ev.id %}">Delete</a>
+    {% endfor %}
+</div>
+
+{% endblock %}

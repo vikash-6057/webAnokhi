@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <form method="post" action="{% url 'event:addimage' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="image" required>
+        <label for="inputState" >Event</label>
+      <select name="event" id="inputState" required class="form-control">
+
+          {% for ev in events %}
+        <option>{{ ev.title }}</option>
+          {% endfor %}
+      </select>
+        <button type="submit">Add image</button>
+    </form>
+
+</div>
+
+<div class="container">
+    {% for im in image %}
+    <img src="{{ im.image.url }}" height="100px" width="100px">
+    <a href="{% url 'event:deleteimage' im.id %}">Delete</a>
+    {% endfor %}
+</div>
+<br><br>
+{% endblock %}

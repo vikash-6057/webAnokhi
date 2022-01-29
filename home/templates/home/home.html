@@ -1,0 +1,415 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block content %}
+<div class="swiper-container hero-slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide hero-content-wrap">
+                <img src="{% static 'images/3.jpeg' %}" alt="">
+
+                <div class="hero-content-overlay position-absolute w-100 h-100">
+                    <div class="container h-100">
+                        <div class="row h-100">
+                            <div class="col-12 col-lg-8 d-flex flex-column justify-content-center align-items-start">
+                                <header class="entry-header">
+
+                                    <h4>When we strive to become better than we are, everything around us becomes better too</h4>
+                                </header><!-- .entry-header -->
+
+                                <div class="entry-content mt-4">
+                                    <p style="padding-left:40px;">Working round-the-clock
+to make changes which we will all want to see.
+</p>
+                                </div><!-- .entry-content -->
+
+                                <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
+                                    <a href="{% url 'donate' %}" class="btn gradient-bg mr-2">Donate Now</a>
+
+                                </footer><!-- .entry-footer -->
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .container -->
+                </div><!-- .hero-content-overlay -->
+            </div><!-- .hero-content-wrap -->
+
+            <div class="swiper-slide hero-content-wrap">
+                <img src="{% static 'images/2.jpg' %}" alt="">
+
+                <div class="hero-content-overlay position-absolute w-100 h-100">
+                    <div class="container h-100">
+                        <div class="row h-100">
+                            <div class="col-12 col-lg-8 d-flex flex-column justify-content-center align-items-start">
+                                <header class="entry-header">
+
+                                    <h4>“It is more blessed to give than receive</h4>
+                                </header><!-- .entry-header -->
+
+                                <div class="entry-content mt-4">
+                                    <p>Help us in making this world a better place to live.</p>
+                                </div><!-- .entry-content -->
+
+                                <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
+                                    <a href="{% url 'donate' %}" class="btn gradient-bg mr-2">Donate Now</a>
+                                </footer><!-- .entry-footer -->
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .container -->
+                </div><!-- .hero-content-overlay -->
+            </div><!-- .hero-content-wrap -->
+
+            <div class="swiper-slide hero-content-wrap">
+                <img src="{% static 'images/1 (2).jfif' %}" alt="">
+
+                <div class="hero-content-overlay position-absolute w-100 h-100">
+                    <div class="container h-100">
+                        <div class="row h-100">
+                            <div class="col-12 col-lg-8 d-flex flex-column justify-content-center align-items-start">
+                                <header class="entry-header">
+
+                                    <h4>Not all heroes wear capes, some hold chalk</h4>
+                                </header><!-- .entry-header -->
+
+                                <div class="entry-content mt-4">
+                                    <p>Started with an objective to
+Organize, to bring together and to generate resources for the underprivileged children.
+</p>
+                                </div><!-- .entry-content -->
+
+                                <footer class="entry-footer d-flex flex-wrap align-items-center mt-5">
+                                    <a href="{% url 'donate' %}" class="btn gradient-bg mr-2">Donate Now</a>
+                                </footer><!-- .entry-footer -->
+                            </div><!-- .col -->
+                        </div><!-- .row -->
+                    </div><!-- .container -->
+                </div><!-- .hero-content-overlay -->
+            </div><!-- .hero-content-wrap -->
+        </div><!-- .swiper-wrapper -->
+
+        <div class="pagination-wrap position-absolute w-100">
+            <div class="container">
+                <div class="swiper-pagination"></div>
+            </div><!-- .container -->
+        </div><!-- .pagination-wrap -->
+
+        <!-- Add Arrows -->
+        <div class="swiper-button-next flex justify-content-center align-items-center">
+            <span><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1171 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z"/></svg></span>
+        </div>
+
+        <div class="swiper-button-prev flex justify-content-center align-items-center">
+            <span><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg"><path d="M1203 544q0 13-10 23l-393 393 393 393q10 10 10 23t-10 23l-50 50q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l466-466q10-10 23-10t23 10l50 50q10 10 10 23z"/></svg></span>
+        </div>
+    </div><!-- .hero-slide-->
+
+    <div class="home-page-icon-boxes">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
+                    <div class="icon-box">
+                        <figure class="d-flex justify-content-center">
+                            <img src="images/hands-gray.png" alt="">
+                            <img src="images/hands-white.png" alt="">
+                        </figure>
+
+                        <header class="entry-header">
+                            <h3 class="entry-title"><a href="{% url 'connect' %}">Connect With Us</a></h3>
+                        </header>
+
+                        <div class="entry-content">
+                            <br><br>
+                            <p>We aspire to establish anokhi pehel in each institute. Join us in giving this initiative an international level.</p>
+                            <br>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
+                    <div class="icon-box">
+                        <figure class="d-flex justify-content-center">
+                            <img src="images/donation-gray.png" alt="">
+                            <img src="images/donation-white.png" alt="">
+                        </figure>
+
+                        <header class="entry-header">
+                            <h3 class="entry-title">Our workings</h3>
+                        </header>
+
+                        <div class="entry-content">
+                            <p>We help the children of the economically weaker section of our society by providing them an education.we also do lots of extracurricular activities to improve their social skills and personality development.we also celebrate lots of festivals with them.
+ </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
+                    <div class="icon-box">
+                        <figure class="d-flex justify-content-center">
+                            <img src="images/charity-gray.png" alt="">
+                            <img src="images/charity-white.png" alt="">
+                        </figure>
+
+                        <header class="entry-header">
+                            <h3 class="entry-title"><a href="{% url 'donate' %}">Donate for a better world</a></h3>
+                        </header>
+
+                        <div class="entry-content">
+                            <br><br>
+                            <p>Your small donation makes a lot of difference for us </p>
+                            <br><br>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div><!-- .home-page-icon-boxes -->
+
+    <div class="home-page-welcome">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6 order-2 order-lg-1">
+                    <div class="welcome-content">
+                        <header class="entry-header">
+                            <h2 class="entry-title">Anokhi Pehel
+</h2>
+                        </header><!-- .entry-header -->
+
+                        <div class="entry-content mt-5">
+                            <p>Anokhi Pehel is an initiative taken by the students of MNNIT to help the children of the economically weaker sections of the society by providing them an education in the best possible way.
+Under this initiative, we teach students from preparatory classes to 12th level teaching them various subjects.Not only do we develop academic skills of the students but also other extra curricular activities such as painting, dancing, sketching, etc.
+Started with a few teachers and just 20 students, today we have a team of about 60 teachers shaping the life of more than 250 students. Our students have shown great performance in various fields.
+</p>
+                        </div><!-- .entry-content -->
+
+                        <div class="entry-footer mt-5">
+                            <a href="{% url 'evening' %}" class="btn gradient-bg mr-2">Read More</a>
+                        </div><!-- .entry-footer -->
+                    </div><!-- .welcome-content -->
+                </div><!-- .col -->
+
+                <div class="col-12 col-lg-6 mt-4 order-1 order-lg-2">
+                    <img src="{% static 'images/4.jpg' %}" alt="welcome">
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div><!-- .home-page-icon-boxes -->
+
+<div class="home-page-events">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="upcoming-events">
+                        <div class="section-heading">
+                            <h2 class="entry-title">In News</h2>
+                        </div><!-- .section-heading -->
+                            {% for new in news %}
+                        <div class="event-wrap d-flex flex-wrap justify-content-between">
+                            <figure class="m-0">
+                                <a href="{{ new.pic.url }}"><img  src="{{ new.pic.url }}" alt="ujnbhtyhn"></a>
+                            </figure>
+
+                            <div class="event-content-wrap">
+                                <header class="entry-header d-flex flex-wrap align-items-center">
+                                    <h3 class="entry-title w-100 m-0">{{ new.title }}</h3>
+
+                                    <div class="posted-date">
+                                        {{ new.date }}
+                                    </div><!-- .posted-date -->
+
+                                    <!-- .cats-links -->
+                                </header><!-- .entry-header -->
+
+                                <div class="entry-content">
+                                    <p class="m-0">{{ new.desc }}</p>
+                                </div><!-- .entry-content -->
+
+                                <!-- .entry-footer -->
+                            </div><!-- .event-content-wrap -->
+                        </div><!-- .event-wrap -->
+                        {% endfor %}
+                        <!--  <iframe class="pull-right" width="560" height="315" src="https://www.youtube.com/embed/NxMhckSJEP4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+
+
+
+                        <!-- .event-wrap -->
+                    </div><!-- .upcoming-events -->
+                </div><!-- .col -->
+                <div class="col-12 col-lg-6">
+                    <br><br>
+                    <div class="featured-cause">
+                        <!-- .section-heading -->
+                        <iframe class="pull-right" width="560" height="315" src="https://www.youtube.com/embed/NxMhckSJEP4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <!-- .cause-wrap -->
+                    </div><!-- .featured-cause -->
+                </div><!-- .col -->
+                <!-- .col -->
+            </div><!-- .row -->
+
+        </div><!-- .container -->
+    </div><!-- .home-page-events -->
+
+<div class="home-page-limestone">
+        <div class="container">
+            <div class="row align-items-end">
+                <div class="coL-12 col-lg-6">
+                    <div class="section-heading">
+                        <h2 class="entry-title">Achievements</h2>
+
+                       <i><p class="mt-5">Stories that we create, smiles that we get are some priceless moments that motivates team Anokhi Pehel work tirelessly and achieve more than just a milestone - it's the contribution for betterment of the notion.</p></i>
+                    </div><!-- .section-heading -->
+                </div><!-- .col -->
+
+                <div class="col-12 col-lg-6">
+                    <div class="milestones d-flex flex-wrap justify-content-between">
+                        <div class="col-12 col-sm-4 mt-5 mt-lg-0">
+                            <div class="counter-box">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img src="images/teamwork.png" alt="">
+                                </div>
+
+                                <div class="d-flex justify-content-center align-items-baseline">
+                                    <div class="start-counter" data-to="1000" data-speed="5000"></div>
+                                    <div class="counter-k">+</div>
+                                </div>
+
+                                <h3 class="entry-title">Children helped</h3><!-- entry-title -->
+                            </div><!-- counter-box -->
+                        </div><!-- .col -->
+
+                        <div class="col-12 col-sm-4 mt-5 mt-lg-0">
+                            <div class="counter-box">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img src="images/donation.png" alt="">
+                                </div>
+
+                                <div class="d-flex justify-content-center align-items-baseline">
+                                    <div class="start-counter" data-to="100" data-speed="5000"></div>
+                                    <div class="counter-k">+</div>
+                                </div>
+
+                                <h3 class="entry-title">Volunteers</h3><!-- entry-title -->
+                            </div><!-- counter-box -->
+                        </div><!-- .col -->
+
+                        <div class="col-12 col-sm-4 mt-5 mt-lg-0">
+                            <div class="counter-box">
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <img src="images/dove.png" alt="">
+                                </div>
+
+                                <div class="d-flex justify-content-center align-items-baseline">
+                                    <div class="start-counter" data-to="20" data-speed="5000"></div>
+                                    <div class="counter-k">+</div>
+                                </div>
+
+                                <h3 class="entry-title">Students admitted to school</h3><!-- entry-title -->
+                            </div><!-- counter-box -->
+                        </div><!-- .col -->
+                    </div><!-- .milestones -->
+                </div><!-- .col -->
+            </div><!-- .row -->
+        </div><!-- .container -->
+    </div><!-- .our-causes -->
+
+<div class="container">
+<div class="row elements-wrap">
+            <div class="col-12">
+                <h2>Stories We Create :</h2><br>
+<i>
+<div class="row">
+    <div class="col-md-6" style="padding:40px"><h4>Ishita</h4>
+This is one of our students, Ishita. Due to poor financial conditions, her family can’t afford to send her to school. Ishita's mother is a single parent and works as a saleslady to make their ends meet.
+Anokhi Pehel convinced her mother for her admission in Jwala Devi school, prayagraj with full expenditure coverage by college faculties.
+She is doing great in school and holds a record of getting 1st rank in every session.
+
+</div>
+<div class="col-md-6" style="padding-left:70px;padding-top:40px"><img src="{% static 'images/h3.jpg' %}"></div>
+</div>
+
+<div class="row">
+    <div class="col-md-6" style="padding:40px">
+<h4>Vanshika Jaiswal</h4>
+“Right mentorship can help you achieve what you always dreamt for.”
+This story is of a student who got 45% in class 9th and 90% in class 10th (boards). Yes this is something which keeps us going.
+</div>
+    <div class="col-md-6" style="padding:40px"><img src="{% static 'images/h2.jpeg' %}" width="400px" height="250px"></div>
+</div>
+
+</div>
+</i>
+
+
+<div class="row elements-wrap">
+            <div class="col-12">
+                <h2>Endorsements</h2><br>
+                <div class="entry-content elements-container">
+                    <div class="row">
+                        <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
+                            <div class="icon-box">
+                                <figure class="d-flex justify-content-center">
+                                    <img src="images/hands-gray.png" alt="">
+                                    <img src="images/hands-white.png" alt="">
+                                </figure>
+
+                                <header class="entry-header">
+                                    <h3 class="entry-title">Dr. Rajeev Tripathi</h3>
+                                </header>
+
+                                <div class="entry-content">
+                                    <p>The purpose of the Anokhi Pehel is to be a bridge between the street and schools, by giving our children the tools and knowledge to go to school. </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
+                            <div class="icon-box">
+                                <figure class="d-flex justify-content-center">
+                                    <img src="images/donation-gray.png" alt="">
+                                    <img src="images/donation-white.png" alt="">
+                                </figure>
+
+                                <header class="entry-header">
+                                    <h3 class="entry-title">Dr. Basant Kumar</h3>
+                                </header>
+
+                                <div class="entry-content">
+                                    <p>Creating access to education is the purest form of nation building.</p>
+                                </div>
+                                <br><br>
+                            </div>
+                            <br><br>
+                        </div>
+
+                        <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
+                            <div class="icon-box">
+                                <figure class="d-flex justify-content-center">
+                                    <img src="images/charity-gray.png" alt="">
+                                    <img src="images/charity-white.png" alt="">
+                                </figure>
+
+                                <header class="entry-header">
+                                    <h3 class="entry-title">Dr. Ranvijay</h3>
+                                </header>
+
+                                <div class="entry-content">
+                                    <p>Every child on the streets of our cities should have the opportunity to a better life. Period.</p>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 96px"></div>
+</div>
+
+
+
+
+
+
+{% endblock %}

@@ -1,4 +1,6 @@
 
+from email.mime import image
+from turtle import title
 from django.db import models
 from django.conf import settings
 from django.utils import timezone
@@ -21,8 +23,12 @@ class Team(models.Model):
 	#created_date=models.DateTimeField(default=timezone.now)
 	#published_date=models.DateTimeField(blank=True, null=True)
 	description = models.TextField(blank=True, null=True)
-	core = models.BooleanField(default=False)
-
+	# core = models.BooleanField(default=False)
+	batches = [
+		('Final','Final'),
+		('Third','Third')
+	]
+	batch = models.CharField(max_length=30, choices=batches,default='Final')
 
 	def __str__(self):
 		return self.title
@@ -30,7 +36,22 @@ class Team(models.Model):
 
 	def summary(self):
 		return self.decription[:100]
+# Model for Alumni
+class Alumni(models.Model):
+	title = models.CharField(max_length=30)
+	image = models.ImageField(upload_to='team/',blank=True,null=True)
+	description = models.TextField(blank=True,null=True)
+	batches = [
+		('First','2016-20'),
+		('Second','2017-21')
+	]
+	batch = models.CharField(max_length=30, choices=batches,default='2016-20')
+	def __str__(self):
+		return self.title
 
+
+	def summary(self):
+		return self.decription[:100]
 
 class News(models.Model):
 	title = models.CharField(max_length=100)

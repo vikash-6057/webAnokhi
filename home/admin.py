@@ -8,4 +8,4 @@ admin.site.register(News)
 admin.site.register(Team)
 admin.site.register(Member)
 
-
+admin.site.register(Alumni)

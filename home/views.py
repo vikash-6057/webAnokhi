@@ -1,3 +1,4 @@
+from turtle import back
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import *
 from django.contrib import messages
@@ -78,7 +79,7 @@ def add_team(request):
 		n.title = request.POST['title']
 		n.description = request.POST['desc']
 		n.image = request.FILES['im']
-		n.core = request.POST['core']
+		n.batch = request.POST['batch']
 		n.save()
 	news = Team.objects.all()
 	return render(request, 'home/addteam.html', {'team': news})
@@ -92,9 +93,12 @@ def del_team(request, team_id):
 
 
 def team(request):
-	te = Team.objects.filter(core=True)
-	oth = Team.objects.filter(core=False)
-	return render(request, 'home/team.html', {'team': te, 'oth': oth})
+	te = Team.objects.all()
+	final_year = Team.objects.filter(batch='Final')
+	third_year = Team.objects.filter(batch='Third')
+	alumni_First = Alumni.objects.filter(batch='First')
+	alumni_Second = Alumni.objects.filter(batch='Second')
+	return render(request, 'home/team.html', {'team': te,'final':final_year,'third':third_year,'alumni_First':alumni_First,'alumni_Second':alumni_Second})
 
 
 def admin_home(request):

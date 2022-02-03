@@ -7,22 +7,26 @@
         <input type="text" name="title" placeholder="Name.." required>
         <input type="text" name="desc" placeholder="Desc" required>
         <input type="file" name="im" required>
-        <input type="radio" id="yes" name="core" required value="True">
-<label for="yes">Core</label>
-<input type="radio" id="no" name="core" value="False">
-<label for="no">Others</label>
+        <!-- <input type="radio" id="yes" name="core" required value="True">
+        <label for="yes">Core</label>
+        <input type="radio" id="no" name="core" value="False">
+        <label for="no">Others</label> -->
+        <select name='batch'>
+            <option value = "Final"> Final </option>
+            <option value = "Third"> Third </option>
+        </select>
         <button type="submit">Add member</button>
     </form>
 </div>
 
 <br><br>
 <div class="container">
-{% for new in team %}
+    {% for new in team %}
 
-<h4>{{ new.title }}</h4>
-<a href="{% url 'del_team' new.id %}">Delete</a>
-<hr>
-{% endfor %}
+    <h4>{{ new.title }}</h4>
+    <a href="{% url 'del_team' new.id %}">Delete</a>
+    <hr>
+    {% endfor %}
 </div>
 
 {% endblock %}

@@ -32,8 +32,8 @@ class Gallery(models.Model):
 
 
 class Program(models.Model):
-	title = models.CharField(max_length = 30 ,blank=True, null=True)
+	title = models.CharField(max_length = 100 ,blank=True, null=True)
 	image= models.ImageField(upload_to='events/',blank=True, null=True)
-	description=models.CharField(max_length=80,blank=True,null=True)
+	description=models.CharField(max_length=500,blank=True,null=True)
 	date = models.DateTimeField(blank=True, null=True)
 

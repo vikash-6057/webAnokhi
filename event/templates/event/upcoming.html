@@ -1,49 +1,293 @@
-
-
 {% extends 'base.html' %}
-{% load staticfiles %}
+{% load static %}
 
 {% block content%}
-<div class="container-fluid" style="background-image:url({% static 'images/causes-bg.jpg' %});height: 150px;width: 100%;">
-            <div class="row">
-                <div class="col-12">
-                    <h1 class="entry-title" style="text-align: center;margin-top: 50px;color:#0066cc">UPCOMING EVENTS</h1>
-                </div><!-- .col -->
-            </div><!-- .row -->
-        </div>
-<main role="main">
-<div class ="container">
+<style>
+  @import url('https://fonts.googleapis.com/css?family=Heebo:400,700|Open+Sans:400,700');
 
-<br />
-<br />
-<hr />
+  :root {
+    --color: #3c3163;
+    --transition-time: 0.5s;
+  }
 
-{% for upcoming in upcoming.all %}
-  <div class="row mb-2">
-    <div class="col-md-12">
-      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">{{ upcoming.title }}</strong>
-          {{upcoming.pub_date_pretty}}
-          <p class="card-text mb-auto">{{ upcoming.summary }}</p>
-          <a href="{% url 'event:detail' upcoming.id %}" class="stretched-link">Continue reading</a>
-        </div>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-         <!--<embed src="upcoming.files.url" width="400px" height="400px"><embed></embed>/> -->
-        </div>
-      </div>
+  * {
+    box-sizing: border-box;
+  }
+
+ 
+  a {
+    color: inherit;
+  }
+
+  .cards-wrapper {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 4rem;
+    padding: 4rem;
+    margin: 0 auto;
+    width: max-content;
+  }
+
+  .card {
+    font-family: 'Heebo';
+    --bg-filter-opacity: 0.5;
+    background-image: linear-gradient(rgba(0, 0, 0, var(--bg-filter-opacity)), rgba(0, 0, 0, var(--bg-filter-opacity))), var(--bg-img);
+    height: 20em;
+    width: 15em;
+    font-size: 1.5em;
+    color: white;
+    border-radius: 1em;
+    padding: 1em;
+    /*margin: 2em;*/
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 0 5em -1em black;
+    transition: all, var(--transition-time);
+    position: relative;
+    overflow: hidden;
+    border: 10px solid #ccc;
+    text-decoration: none;
+  }
+
+  .card:hover {
+    transform: rotate(0);
+  }
+
+  .card h1 {
+    margin: 0;
+    font-size: 1.5em;
+    line-height: 1.2em;
+  }
+
+  .card p {
+    font-size: 0.75em;
+    font-family: 'Open Sans';
+    margin-top: 0.5em;
+    line-height: 2em;
+  }
+
+  .card .tags {
+    display: flex;
+  }
+
+  .card .tags .tag {
+    font-size: 0.75em;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 0.3rem;
+    padding: 0 0.5em;
+    margin-right: 0.5em;
+    line-height: 1.5em;
+    transition: all, var(--transition-time);
+  }
+
+  .card:hover .tags .tag {
+    background: var(--color);
+    color: white;
+  }
+
+  .card .date {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 0.75em;
+    padding: 1em;
+    line-height: 1em;
+    opacity: .8;
+  }
+
+  .card:before,
+  .card:after {
+    content: '';
+    transform: scale(0);
+    transform-origin: top left;
+    border-radius: 50%;
+    position: absolute;
+    left: -50%;
+    top: -50%;
+    z-index: -5;
+    transition: all, var(--transition-time);
+    transition-timing-function: ease-in-out;
+  }
+
+  .card:before {
+    background: #ddd;
+    width: 250%;
+    height: 250%;
+  }
+
+  .card:after {
+    background: rgb(5, 192, 206);
+    width: 200%;
+    height: 200%;
+  }
+
+  .card:hover {
+    color: var(--color);
+  }
+
+  .card:hover:before,
+  .card:hover:after {
+    transform: scale(1);
+  }
+
+  .card-grid-space .num {
+    font-size: 3em;
+    margin-bottom: 1.2rem;
+    margin-left: 1rem;
+  }
+
+  .info {
+    font-size: 1.2em;
+    display: flex;
+    padding: 1em 3em;
+    height: 3em;
+  }
+
+  .info img {
+    height: 3em;
+    margin-right: 0.5em;
+  }
+
+  .info h1 {
+    font-size: 1em;
+    font-weight: normal;
+  }
+
+  /* MEDIA QUERIES */
+  @media screen and (max-width: 1285px) {
+    .cards-wrapper {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    .cards-wrapper {
+      grid-template-columns: 1fr;
+    }
+
+    .info {
+      justify-content: center;
+    }
+
+    .card-grid-space .num {
+      /margin-left: 0;
+      /text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .cards-wrapper {
+      padding: 4rem 2rem;
+    }
+
+    .card {
+      max-width: calc(100vw - 4rem);
+    }
+  }
+
+  @media screen and (max-width: 450px) {
+    .info {
+      display: block;
+      text-align: center;
+    }
+
+    .info h1 {
+      margin: 0;
+    }
+  }
+  .head {
+  background: gold;
+  display: flex;
+  color: white;
+}
+
+.head:before,
+.head:after {
+  content: '';
+  margin: auto 2em;
+  border-bottom: solid 1px;
+  flex: 1;
+}
+
+h1 {
+  position: relative;
+  margin: 0.5em;
+  padding: 0.25em 1em;
+  overflow: hidden;
+  background: linear-gradient(currentcolor, currentcolor) no-repeat top center, linear-gradient(currentcolor, currentcolor) no-repeat bottom center;
+  background-size: calc(100% - 1.65em) 1px;
+}
+
+h1:before,
+h1:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border: solid 1px;
+  border-top: none;
+  border-bottom: none;
+  transform: skew(45deg)
+}
+
+h1:after {
+  transform: skew(-45deg)
+}
+.head + .head {
+  color:pink;
+}
+.head + .head + .head {
+  color:gold;
+}
+</style>
+<section>
+  <div class="head">
+      <h1>Upcoming Events </h1>
     </div>
+  <section>
+</section>
+
+<main role="main">
+  <div class="row mb-2">
+    {% for upcoming in upcoming.all %}
+    <div class="col-md-4">
+      <section class="cards-wrapper">
+        <div class="card-grid-space">
+          <div class="num"></div>
+          <a class="card" href="{% url 'event:detail' upcoming.id %}" style="--bg-img: url('{{ upcoming.image.url}}')">
+            <div>
+              <h1>{{ upcoming.title }}</h1>
+              <p>{{ upcoming.summary }}</p>
+              <div class="date">{{upcoming.pub_date_pretty}}</div>
+
+            </div>
+          </a>
+        </div>
+      </section>
+    </div>
+    {% endfor %}
   </div>
-{% endfor %}
-</div>
+  <br />
+  <br />
+  <hr />
+
+
+
 
 </main>
-<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+  integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+  integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+  integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 
 {% endblock %}
+
 </html>
-
-

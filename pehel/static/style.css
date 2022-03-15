@@ -831,7 +831,8 @@ ul.tabs-nav .tab-nav.active {
     width: 64px;
     height: 4px;
     border-radius: 2px;
-    background: #38A3A5;
+    background: #9fc9ef;
+    display: none;
 }
 
 @media screen and (max-width: 992px) {

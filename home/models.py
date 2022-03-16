@@ -25,10 +25,10 @@ class Team(models.Model):
 	description = models.TextField(blank=True, null=True)
 	# core = models.BooleanField(default=False)
 	batches = [
-		('Final','Final'),
-		('Third','Third')
+		('Faculty','Faculty'),
+		('Web','Web'),
 	]
-	batch = models.CharField(max_length=30, choices=batches,default='Final')
+	batch = models.CharField(max_length=30, choices=batches,default='Faculty')
 
 	def __str__(self):
 		return self.title
@@ -42,8 +42,12 @@ class Alumni(models.Model):
 	image = models.ImageField(upload_to='team/',blank=True,null=True)
 	description = models.TextField(blank=True,null=True)
 	batches = [
-		('First','2016-20'),
-		('Second','2017-21')
+		('2016-20','2016-20'),
+		('2017-21','2017-21'),
+		('2018-22','2018-22'),
+		('2019-23','2019-23'),
+		('2020-24','2020-24'),
+		('2021-25','2021-25'),
 	]
 	batch = models.CharField(max_length=30, choices=batches,default='2016-20')
 	def __str__(self):

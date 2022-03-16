@@ -93,12 +93,19 @@ def del_team(request, team_id):
 
 
 def team(request):
-	te = Team.objects.all()
-	final_year = Team.objects.filter(batch='Final')
-	third_year = Team.objects.filter(batch='Third')
-	alumni_First = Alumni.objects.filter(batch='First')
-	alumni_Second = Alumni.objects.filter(batch='Second')
-	return render(request, 'home/team.html', {'team': te,'final':final_year,'third':third_year,'alumni_First':alumni_First,'alumni_Second':alumni_Second})
+	alumni_First = Alumni.objects.filter(batch='2016-20')
+	alumni_Second = Alumni.objects.filter(batch='2017-21')
+	web_team = Team.objects.filter(batch='Web')
+	faculty_team = Team.objects.filter(batch='Faculty')
+
+	# alumni_Third = Team.objects.filter(batch='2018-22')
+	# alumni_Fourth = Team.objects.filter(batch='2019-23')
+	# alumni_Fifth = Team.objects.filter(batch='2020-24')
+	context ={'alumni_First': alumni_First,
+	 'alumni_Second': alumni_Second, 
+	 'web_team': web_team, 
+	 'faculty_team': faculty_team}
+	return render(request, 'home/team.html', context)
 
 
 def admin_home(request):

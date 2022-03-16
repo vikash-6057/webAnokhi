@@ -2,6 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Anokhi Pehel-MNNIT</title>
 
@@ -10,8 +11,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="Anokhi Pehel" content="Anokhi Pehel MNNIT">
 
-        <meta name="keywords" content="Anokhi Pehel MNNIT">
-        <meta name="author" content="Ayush Srivastava, Nishant Kumar">
+    <meta name="keywords" content="Anokhi Pehel MNNIT">
+    <meta name="author" content="Ayush Srivastava, Nishant Kumar">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
     <!-- FontAwesome CSS -->
@@ -55,12 +56,14 @@
     </script>
 
 </head>
+
 <body>
     <header style="background: #38A3A5;color: #fff;">
-        <div >
+        <div>
             <div class="container">
                 <div class="row flex-wrap justify-content-center justify-content-lg-between align-items-lg-center">
-                    <div class="col-12 col-lg-4 d-none d-md-flex flex-wrap justify-content-center justify-content-lg-start mb-3 mb-lg-0">
+                    <div
+                        class="col-12 col-lg-4 d-none d-md-flex flex-wrap justify-content-center justify-content-lg-start mb-3 mb-lg-0">
                         <div class="header-bar-email">
                             ANOKHI PEHEL MNNIT
                         </div><!-- .header-bar-email -->
@@ -68,7 +71,8 @@
                         <!-- .header-bar-text -->
                     </div><!-- .col -->
 
-                    <div class="col-12 col-lg-8 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
+                    <div
+                        class="col-12 col-lg-8 d-flex flex-wrap justify-content-center justify-content-lg-end align-items-center">
                         <div class="donate-btn">
                             <a href="{% url 'connect' %}">Connect With Us</a>
                         </div>
@@ -79,46 +83,48 @@
                         <div class="donate-btn" style="padding-left:10px">
                             <a href="javascript:{document.getElementById('logout').submit()}">Logout</a>
                             <form id="logout" method="post" action="{% url 'users:logout' %}">
-           {% csrf_token %}
-           <input type="hidden"/>
-         </form>
+                                {% csrf_token %}
+                                <input type="hidden" />
+                            </form>
                         </div>
                         <div class="donate-btn" style="padding-left:10px">
                             <a href="{% url 'users:home' %}">Admin Home</a>
                         </div>
-                        {% endif %}<!-- .donate-btn -->
+                        {% endif %}
+                        <!-- .donate-btn -->
                     </div><!-- .col -->
                 </div><!-- .row -->
             </div><!-- .container -->
         </div><!-- .top-header-bar -->
 
-        <div class="nav-bar" style="background-color: white;">
+        <div class="nav-bar" style="background-color: lightgray;">
             <div class="container">
                 <div class="row">
                     <div class="col-12 d-flex flex-wrap justify-content-between align-items-center">
                         <div class="site-branding d-flex align-items-center">
-                           <img class="d-block" width="180" height = "150" src="{% static 'images/anokhilogo.png' %}" alt="logo">
-                        <!-- .site-branding -->
+                            <img class="d-block" width="180" height="150" src="{% static 'images/anokhilogo.png' %}"
+                                alt="logo">
+                            <!-- .site-branding -->
 
-                        <nav class="site-navigation d-flex justify-content-end align-items-center">
-                            <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-content-center">
-                                <li ><a href="{% url 'home' %}">Home</a></li>
-                                <li><a href="{%url 'event:program' %}">Program</a></li>
-                               <li><a href="{%url 'evening' %}">Evening Class</a></li>
-                                <li><a href="{% url 'event:upcoming' %}">Upcoming Events</a></li>
-                                
-                                <li><a href="{% url 'event:past' %}">Past Events</a></li>
-                                
+                            <nav class="site-navigation d-flex justify-content-end align-items-center" style="margin-left: 330px;">
+                                <ul class="d-flex flex-column flex-lg-row justify-content-lg-end align-content-center">
+                                    <li><a href="{% url 'home' %}">Home</a></li>
+                                    <!-- <li><a href="{%url 'event:program' %}">Program</a></li> -->
+                                    <li><a href="{%url 'evening' %}">Evening Class</a></li>
+                                    <li><a href="{% url 'event:upcoming' %}">Upcoming Events</a></li>
+
+                                    <li><a href="{% url 'event:past' %}">Past Events</a></li>
 
 
-                                
-                                <li><a href="{% url 'contact' %}">Contact</a></li>
-                                <li><a href="{% url 'team' %}">Our Team</a></li>
 
-                                <li><a href="{% url 'antyodaya' %}">Antyodaya</a></li>
-                            </ul>
-                        </nav><!-- .site-navigation -->
-                    </div>
+
+                                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                                    <li><a href="{% url 'team' %}">Our Team</a></li>
+
+                                    <li><a href="{% url 'antyodaya' %}">Antyodaya</a></li>
+                                </ul>
+                            </nav><!-- .site-navigation -->
+                        </div>
                         <div class="hamburger-menu d-lg-none">
                             <span></span>
                             <span></span>
@@ -131,38 +137,42 @@
         </div><!-- .nav-bar -->
     </header><!-- .site-header -->
 
-<div class="container">
-{% if messages %}
-{% for message in messages %}
-<div class="alert alert-{{ message.tags }}">
-  {{ message }}
-</div>
-{% endfor %}
-{% endif %}
-</div>
-     {% if user.is_authenticated %}
+    <div class="container">
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+    {% if user.is_authenticated %}
     <h4>Please fill all fields in the form to avoid errors and site crash.</h4>
     <h4>After adding an object never go back.Always click on Admin Home on top.</h4>
     {% endif %}
-{% block content %}
-{% endblock %}
+    {% block content %}
+    {% endblock %}
 
 
-<!-- footer content-->
+    <!-- footer content-->
 
-  <footer class="site-footer">
+    <footer class="site-footer">
         <div class="footer-widgets">
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-6 col-lg-3">
                         <div class="foot-about">
-                            <h2><a class="foot-logo" href="#"><img width="180" height="140" src="{% static 'images/5.png' %}" alt=""></a></h2>
+                            <h2><a class="foot-logo" href="#"><img width="180" height="140"
+                                        src="{% static 'images/5.png' %}" alt=""></a></h2>
 
-                            <p>Anokhi pehel is an initiative started by MNNITians. Its an organisation which helps in upliftment of the society. It is involved in many social activities particularly providing free education to underprivileged  children.</p>
+                            <p>Anokhi pehel is an initiative started by MNNITians. Its an organisation which helps in
+                                upliftment of the society. It is involved in many social activities particularly
+                                providing free education to underprivileged children.</p>
 
                             <ul class="d-flex flex-wrap align-items-center">
                                 <li><a href="https:\\facebook.com\anokhipehel"><i class="fa fa-facebook"></i></a></li>
                                 <li><a href="https:\\instagram.com\anokhipehel"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="https://www.linkedin.com/company/anokhi-pehel/"><i class="fa fa-linkedin"></i></a></li>
                             </ul>
                         </div><!-- .foot-about -->
                     </div><!-- .col -->
@@ -188,7 +198,8 @@
                             <ul>
                                 <li><i class="fa fa-phone"></i><span>9580259378</span></li>
                                 <li><i class="fa fa-envelope"></i><span>anokhipehel@mnnit.ac.in</span></li>
-                                <li><i class="fa fa-map-marker"></i><span>MNNIT Allahabad, Teliarganj ,Prayagraj - 211004</span></li>
+                                <li><i class="fa fa-map-marker"></i><span>MNNIT Allahabad, Teliarganj ,Prayagraj -
+                                        211004</span></li>
                             </ul>
                         </div><!-- .foot-contact -->
 
@@ -198,7 +209,24 @@
                                 <input type="submit" value="send"
                             </form><!-- .flex -->
                         </div><!-- .search-widget -->
-                    </div><!-- .col -->
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-3">
+                        <div class="foot-about">
+                            <h2><a class="foot-logo" href="#"><img width="130" height="170"
+                                        src="{% static 'images/35.png' %}" alt=""></a></h2>
+
+                            <p>Motilal Nehru National Institute of Technology Allahabad, Allahabad (MNNIT) is an
+                                Institute with total commitment to quality and excellence in academic pursuits. .</p>
+
+                            <ul class="d-flex flex-wrap align-items-center">
+                                <li><a href="https://www.facebook.com/MNNITALLD"><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.linkedin.com/school/motilal-nehru-national-institute-of-technology/"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div><!-- .foot-about -->
+                    </div>
+
+                    <!-- .col -->
                 </div><!-- .row -->
             </div><!-- .container -->
         </div><!-- .footer-widgets -->
@@ -207,9 +235,12 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <p class="m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-<!--Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved-->MNNIT - Anokhi Pehel
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                        <p class="m-0">
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                            <!--Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved-->MNNIT
+                            - Anokhi Pehel
+                            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        </p>
                     </div><!-- .col-12 -->
                 </div><!-- .row -->
             </div><!-- .container -->
@@ -226,4 +257,5 @@
     <script type='text/javascript' src="{% static 'js/custom.js' %}"></script>
 
 </body>
+
 </html>

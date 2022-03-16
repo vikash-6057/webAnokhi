@@ -3,133 +3,178 @@
 
 {% block content %}
 
-<div class="container" style="background-image:url({% static 'images/connect.png' %});height: 300px;width: 100%;background-repeat: no-repeat;">
-        </div>
+<style>
+.showcase{
+  height: 500px;
 
-<br>
-<!-- .row -->
-            <br><br>
-<div class="container"><h4 style="text-align:center;color:#00cc00">Connect with us to help the society and make this world a better place for all of us.<br>
-In order to volunteer us you need to fill the membership form and get a Membership ID.</h4></div>
-            <br><br>
-<div class="container">
-<h3>Our Promise</h3>
-<br>
-            <div class="row">
-                <div class="col-12 col-md-12 col-lg-12 mt-4 mt-lg-0">
-                    <div class="icon-box active">
-                        <figure class="d-flex justify-content-center">
-                            <img src="images/hands-gray.png" alt="">
-                            <img src="images/hands-white.png" alt="">
-                        </figure>
+  background-image: url("https://img.freepik.com/free-vector/online-world-concept-illustration_114360-1007.jpg?t=st=1647367787~exp=1647368387~hmac=6195f42fccb5db0404067c9578f51f3f2663bea0e4909f1998be9fbf494c3764&w=1060");
+  background-attachment: fixed;
 
-                        <header class="entry-header"><h3>Zero funds organization</h3>
-                        </header>
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: flex-end;
+  padding-bottom: 90px;
+  margin-bottom: 20px;
+  overflow: hidden;
+  color: crimson;
+  padding-top: 20px;
+}
 
-                        <div class="entry-content">
-                            <p>Anokhi Pehel is a decentralized, zero funds platform with no employees, office space, and insurance.</p>
-                        </div>
+</style>
+<div class="page-header" style="background-color: #fff2dd;">
+
+    <div class="showcase">
+        <!-- <h5>Let's Chitchat!!</h5>
+        <p>Get in touch , <span class="type"><span>Speak to us </span></span></p> -->
+      </div>
+
+    <br>
+    <!-- .row -->
+    <br><br>
+    <div class="container">
+        <h4 style="text-align:center;color:
+        #ff4e5a">Connect with us to help the society and make this world a better
+            place for all of us.<br>
+            In order to volunteer us you need to fill the membership form and get a Membership ID.</h4>
+    </div>
+    <br><br>
+    <div class="container">
+        <h3>Our Promise</h3>
+        <br>
+        <div class="row">
+            <div class="col-12 col-md-12 col-lg-12 mt-4 mt-lg-0">
+                <div class="icon-box active">
+                    <figure class="d-flex justify-content-center">
+                        <img src="images/hands-gray.png" alt="">
+                        <img src="images/hands-white.png" alt="">
+                    </figure>
+
+                    <header class="entry-header">
+                        <h3>Zero funds organization</h3>
+                    </header>
+
+                    <div class="entry-content">
+                        <p>Anokhi Pehel is a decentralized, zero funds platform with no employees, office space, and
+                            insurance.</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-<br>
-<br>
-<!--Forms -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 col-lg-6">
+    <br>
+    <br>
+    <!--Forms -->
+    <div class="container" style="border: dotted black 3px;">
+        <div class="row">
+            <div class="col-md-12 col-lg-6" >
 
+                <br>
+                <form style="margin-right: 50px" method="post" action="{% url 'addmember' %}">
+                    {% csrf_token %}
+                    <h3>Membership Form</h3>
+                    Name:
+                    <input type="text" id="defaultRegisterFormFirstName" name="name" class="form-control"
+                        placeholder="Name" required>
+                    <br>
+                    Email:
+                    <input type="email" id="defaultRegisterFormEmail" name="mail" class="form-control"
+                        placeholder="E-mail" required>
+                    <br>
+                    Address:
+                    <input type="text" id="defaultRegisterFormEmail" name="loc" class="form-control"
+                        placeholder="eg- Allahabad" required>
+                    <br>
+                    Alumni :
+                    <div id="yes"><input type="radio" id="yes" name="alum" value="True">
+                        <label for="yes">Yes</label>
+                    </div>
+                    <div id="no">
+                        <input type="radio" id="no" name="alum" value="False">
+                        <label for="no">No</label>
+                    </div>
+                    <br>
+                    <div id="iid">Batch:
+                        <input type="number" maxlength="4" name="batch" placeholder="eg :2022" class="form-control">
+                    </div>
+                    <br>
+                    Phone number:
+                    <br>
+                    <input type="number" class="form-control" id="phone" name="mob" pattern="[0-9]{10}"
+                        placeholder="eg : 9835714697" required>
+                    <br>
+                    <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Tell us something about yourself:</label>
+                        <textarea class="form-control" name="about" required id="exampleFormControlTextarea1"
+                            maxlength="300" rows="4" placeholder="max-length: 300"></textarea>
+                        <br>
+                        <button type="submit" class="btn btn-danger">Request Membership</button>
+                    </div>
+                </form>
+                <script type="text/javascript">
+                    document.getElementById("iid").style.display = "none";
+                    document.getElementById("yes").onclick = function () {
+                        document.getElementById("iid").style.display = "block";
+                    }
+                    document.getElementById("no").onclick = function () {
+                        document.getElementById("iid").style.display = "none";
+                    }
+
+                    
+                </script>
+
+
+            </div><br>
             <br>
-            <form style="margin-right: 50px" method="post" action="{% url 'addmember' %}">
-                {% csrf_token %}
-            <h3>Membership Form</h3>
-            Name:
-            <input type="text" id="defaultRegisterFormFirstName" name="name" class="form-control" placeholder="Name" required>
             <br>
-            Email:
-            <input type="email" id="defaultRegisterFormEmail" name="mail" class="form-control" placeholder="E-mail" required>
-            <br>
-            Address:
-            <input type="text" id="defaultRegisterFormEmail" name="loc" class="form-control" placeholder="eg- Allahabad" required>
-            <br>
-            Alumni :
-            <div id="yes"><input type="radio" id="yes" name="alum" value="True">
-<label for="yes">Yes</label></div>
-<div id="no">
-<input type="radio" id="no" name="alum" value="False">
-<label for="no">No</label></div>
-<br>
-            <div id="iid">Batch:
-                <input type="number" maxlength="4" name="batch" placeholder="eg :2022" class="form-control">
+            <div class="col-md-12 col-lg-6" >
+
+                <br>
+                <form style="margin-left: 50px;margin-right: 50px" method="POST" action="{% url 'connect' %}">
+                    {% csrf_token %}
+                    <h3>Become Volunteer</h3>
+                    <div class="form-row mb-4">
+
+                        <div class="col">
+                            Membership-ID
+                            <input name="mem" type="text" id="defaultRegisterFormFirstName" class="form-control"
+                                placeholder="ID" required>
+                        </div>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">How do you want to help us :</label>
+                        <select name="type" class="form-control" id="exampleFormControlSelect1" required>
+                            <option>I will take classes</option>
+                            <option>I want to Donate</option>
+                            <option>I want to suggest changes</option>
+                            <option>Others *</option>
+                        </select>
+                    </div>
+                    <label>Describe your contribution :</label>
+                    <br>
+                    <textarea name="desc" class="form-control" id="exampleFormControlTextarea1"
+                        placeholder=" in not more than 300 words" rows="5" required></textarea>
+                    <br>
+
+                    <div class="form-group row">
+                        Date of volunteering :
+                        <input type="date" id="defaultRegisterFormFirstName" name="date" required>
+                    </div>
+                    <!-- <button style="background-color:#38a3a5; width: 500px ;height:50px" type="submit">Schedule</button> -->
+                    <button type="submit" class="btn btn-danger">Schedule</button>
+                </form>
+                <br>
+                <br>
             </div>
-    <br>
-    Phone number:
-    <br>
-    <input type="number" class="form-control" id="phone" name="mob"
-       pattern="[0-9]{10}" placeholder="eg : 9835714697" required>
-       <br>
-<div class="form-group">
-    <label for="exampleFormControlTextarea1">Tell us something about yourself:</label>
-    <textarea class="form-control" name="about" required id="exampleFormControlTextarea1" maxlength="300" rows="4" placeholder="max-length: 300"></textarea>
-    <br>
-    <button style="background-color:#ff531a;width: 500px ;height:50px" type="submit">Request Membership</button>
-  </div>
-    </form>
-    <script type="text/javascript">
-          document.getElementById("iid").style.display="none";
-          document.getElementById("yes").onclick=function(){
-          document.getElementById("iid").style.display="block";
-        }
-        document.getElementById("no").onclick=function(){
-          document.getElementById("iid").style.display="none";
-        }
-    </script>
-
-
-        </div>
-        <br>
-        <br>
-        <div class="col-md-12 col-lg-6">
-
-            <br>
-            <form style="margin-left: 50px;margin-right: 50px" method="POST" action="{% url 'connect' %}">
-                {% csrf_token %}
-                <h3>Become Volunteer</h3>
-                <div class="form-row mb-4">
-
-        <div class="col">
-            Membership-ID
-            <input name="mem" type="text" id="defaultRegisterFormFirstName" class="form-control" placeholder="ID" required>
-        </div>
-
-    </div>
-      <div class="form-group">
-    <label for="exampleFormControlSelect1">How do you want to help us :</label>
-    <select name="type" class="form-control" id="exampleFormControlSelect1" required>
-      <option>I will take classes</option>
-      <option>I want to Donate</option>
-      <option>I want to suggest changes</option>
-      <option>Others *</option>
-    </select>
-  </div>
-    <label>Describe your contribution :</label>
-    <br>
-    <textarea name="desc" class="form-control" id="exampleFormControlTextarea1" placeholder=" in not more than 300 words" rows="5" required></textarea>
-    <br>
-
-    <div class="form-group row">
-        Date of volunteering :
-    <input type="date" id="defaultRegisterFormFirstName" name="date" required>
-    </div>
-    <button style="background-color:#ff531a;width: 500px ;height:50px" type="submit">Schedule</button>
-
-            </form>
-            <br>
-            <br>
         </div>
     </div>
+<br><br>
 </div>
-
 {% endblock %}

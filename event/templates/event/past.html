@@ -38,7 +38,7 @@ a {
   width: max-content;
 }
 
-.card {
+/* .card {
   font-family: 'Heebo';
   --bg-filter-opacity: 0.5;
   background-image: linear-gradient(rgba(0,0,0,var(--bg-filter-opacity)),rgba(0,0,0,var(--bg-filter-opacity))), var(--bg-img);
@@ -47,9 +47,9 @@ a {
   font-size: 1.5em;
   color: white;
   border-radius: 1em;
-  padding: 1em;
+  padding: 1em; */
   /*margin: 2em;*/
-  display: flex;
+  /* display: flex;
   align-items: flex-end;
   background-size: cover;
   background-position: center;
@@ -59,9 +59,9 @@ a {
   overflow: hidden;
   border: 10px solid #ccc;
   text-decoration: none;
-}
+} */
 
-.card:hover {
+/* .card:hover {
   transform: rotate(0);
 }
 
@@ -144,7 +144,7 @@ a {
   font-size: 3em;
   margin-bottom: 1.2rem;
   margin-left: 1rem;
-}
+} */
 
 .info {
   font-size: 1.2em;
@@ -247,15 +247,66 @@ h1:after {
 .head + .head + .head {
   color:gold;
 }
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+  }
+  .card {
+    flex: 0 0 350px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 6px 0px  rgba(0,0,0,0.3);
+    
+  } 
+  .card img {
+    max-width: 100%;
+  }
+  .card .text {
+    padding: 0 20px 20px;
+  }
+  .card .text > button {
+    background: gray;
+    border: 0;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    }
 </style>
 <section>
   <div class="head">
-      <h1>Past Events </h1>
+      <h1>Events </h1>
     </div>
   <section>
 </section>
+
+
 <main role="main" style="background-image:url(https://www.colorhexa.com/ffc0cb.png);">
-  <div class="row mb-2">
+<main class="cards">
+  {% for past in past.all %}
+  <div class="card" style="background-color: 
+  #fff2dd;  border: black solid 3px;  min-height: 450px;">
+    <!-- <a class="" href="{% url 'event:detail' past.id %}" style="background-color: #fff2dd; min-height: 500px;">  -->
+      <!-- <div style="background-image:  url({{ past.image.url}})"> -->
+        <img src="{{ past.image.url }}">
+      <div class="text" >
+        <br>
+        <h3>{{ past.title }}</h3>
+        <p>{{ past.summary }}</p>
+        </div>
+    <!-- </a> -->
+        <!-- <div class="date">{{past.pub_date_pretty}}</div> -->
+        
+      </div>
+    
+
+  {% endfor %}
+  
+  
+</main>
+
+  <!-- <div class="row mb-2">
   {% for past in past.all %}
   <div class="col-md-4">
   <section class="cards-wrapper">
@@ -272,16 +323,16 @@ h1:after {
     </div>
   </section>
 </div>
-  {% endfor %}
+  {% endfor %} -->
 </div>
-<br />
-<br />
-<hr />
+
 
 
 
 
 </main>
+
+
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

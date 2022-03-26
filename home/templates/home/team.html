@@ -41,6 +41,7 @@
   .profile-card .img {
     position: relative;
     width: 100%;
+    
     height: 100%;
     transition: .6s;
     z-index: 99;
@@ -126,14 +127,16 @@
           <div class="col p-4 d-flex flex-column position-static">
             <strong style="color: #0c0c0c; font-size: 30px;">{{ team.title }}</strong>
             <div style="font-size: 20px;">
+              
               <p class="card-text mb-auto">{{ team.description }}</p>
+              <a href="{{ team.linkedin_url }}"><i class="fa fa-linkedin"></i></a>
           
             </div>
             
             <br>
           </div>
           <div class="col-auto d-none d-lg-block">
-            <img height="200px" width="200px" src="{{ team.image.url}}">
+            <img height="200px" width="200px" style="border: black solid 3px;" src="{{ team.image.url}}">
           </div>
         </div>
       </div>
@@ -185,15 +188,17 @@
       <div class="row mb-2">
         {% for team in alumni_Second.all%}
         <div class="col-md-3">
-          <div class="main">
+          <div class="main" >
   
-            <div class="profile-card">
+            <div class="profile-card" >
   
               <div class="img">
                 <img src="{{ team.image.url}}">
               </div>
-              <div class="caption">
+              <div class="caption" >
                 <h3>{{ team.title }}</h3>
+                <a href="{{ team.linkedin_url }}"><i class="fa fa-linkedin"></i></a>
+
                 <p>{{ team.description }}</p>
                 
               </div>
@@ -229,8 +234,9 @@
                   </div>
                   <div class="caption">
                     <h3>{{ team.title }}</h3>
+                    <a href="{{ team.linkedin_url }}"><i class="fa fa-linkedin"></i></a>
                     <p>{{ team.description }}</p>
-                    
+
                     
                   </div>
       

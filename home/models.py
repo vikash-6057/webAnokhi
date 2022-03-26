@@ -28,6 +28,7 @@ class Team(models.Model):
 		('Final','Final'),
 		('Third','Third')
 	]
+	linkedin_url = models.TextField(blank=True,null=True)
 	batch = models.CharField(max_length=30, choices=batches,default='Final')
 
 	def __str__(self):
@@ -45,6 +46,7 @@ class Alumni(models.Model):
 		('First','2016-20'),
 		('Second','2017-21')
 	]
+	linkedin_url = models.TextField(blank=True,null=True)
 	batch = models.CharField(max_length=30, choices=batches,default='2016-20')
 	def __str__(self):
 		return self.title

@@ -2,15 +2,55 @@
 {% load static %}
 
 {% block content %}
+
+<style>
+    .antimg {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .cards {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+    }
+
+    .card {
+        flex: 0 0 400px;
+        margin: 10px;
+        border: 1px solid #ccc;
+        box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+        min-height: 500px;
+
+    }
+
+    .card img {
+        max-width: 100%;
+    }
+
+    .card .text {
+        padding: 0 20px 20px;
+    }
+
+    .card .text>button {
+        background: gray;
+        border: 0;
+        color: white;
+        padding: 10px;
+        width: 100%;
+    }
+</style>
 <div class="page-header" style="background-color: rgba(21,21,21,.9);">
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <h1 style="color: white; margin-top: 40px; text-align: center;">ANTYODAYA</h1>
-                
+
                 <br>
                 <div class="container">
-                    <img width="100%" height="700px" src="{% static 'images/antod.jpg' %}" alt="">
+                    <img style="margin-left: auto; margin-right: auto; display: block; width: 90%;" src="{% static 'images/ant.jpg' %}" alt="">
                 </div>
                 <br><br>
                 <h5 style="text-align:center;font-weight: 400; color: white;">Anokhi पहल is the non profit organisation
@@ -50,7 +90,7 @@
                     <div class="col-12 col-md-6 col-lg-4 mt-4 mt-lg-0">
                         <div class="icon-box">
                             <figure class="d-flex justify-content-center">
-                                <img src="images/hands-gray.png" alt="" >
+                                <img src="images/hands-gray.png" alt="">
                                 <img src="images/hands-white.png" alt="">
                             </figure>
 
@@ -120,223 +160,152 @@
         <h1 style="text-align: center;" style="color: white;">Events</h1>
         <br>
 
-        <div class="row" style="border: white 5px dotted;">
-            <br>
-            <br>
-            <div class="col-md-6" style="padding:40px; font-size: 20px; ">
-                <h4 style="text-decoration: underline white;">Project Demonstration</h4>
-                In this event, students will be making innovative model to solve daily life problems.This is a flagship
-                event in which the problem statements have been framed to target the problems in daily life and creating
-                an efficient way to solve by being creative, analysing and identifying the problem and finally coming up
-                with an innovative solution.The event would have exciting prizes along with cash prize.
-            </div>
-            <div class="col-md-6" style="padding:40px; " ><img src="{% static 'images/36.jpg' %}" width="400px"
-                    height="300px" style="border: 3px solid white; border-radius:5px;"></div>
-        </div>
-        <br>
 
-        <div class="row" style="border: white 5px dotted;">
-            <div class="col-md-6" style="padding:40px; font-size: 20px;">
-                <br>
-                <br>
-                <h4 style="text-decoration: underline white;">Quiz</h4>
-                Quiz is the only way to check the mental and spontaneous thinking abilities of a student. This quiz is
-                to be based on basic science facts, aptitude and reasoning. The event is sectioned into two groups with
-                6th to 8th in junior group and 9th to 12th in senior.
-            </div>
-            <div class="col-md-6" style="padding:40px"><img src="{% static 'images/ap1 (4).jpg' %}" width="400px"
-                    height="300px" style="border: 3px solid white; border-radius:5px;"></div>
-        </div>
-        <br>
+        <main class="cards" style="color: black; align-items: center; ">
+            <article class="card" style="background-color: 
+            #fff2dd;  border: black solid 3px;">
+                <img src="{% static 'images/36.jpg' %}" alt="Sample photo" style="border: black solid 5px;">
+                <div class="text">
+                    <br>
+                    <h3>Project Demonstration</h3>
+                    <p>In this event, students will be making innovative model to solve daily life problems.</p>
+                    <!-- <button>Here's why</button> -->
+                </div>
+            </article>
+            <article style="background-color: 
+            #fff2dd;  border: black solid 3px;" class="card">
+                <img src="{% static 'images/ap1 (4).jpg' %}" alt="Sample photo" style="border: black solid 5px;">
+                <div class="text">
+                    <br>
+                    <h3>Quiz</h3>
+                    <p>Quiz is the only way to check the mental and spontaneous thinking abilities of a student.</p>
+                    <!-- <button>Here's how</button> -->
+                </div>
+            </article>
+            <article style="background-color: 
+            #fff2dd;  border: black solid 3px;" class="card">
+                <img src="{% static 'images/ap (4).jpg' %}" alt="Sample photo" style="border: black solid 5px;">
+                <div class="text">
+                    <br>
+                    <h3>Oration</h3>
+                    <p>The art of delivering your views, thoughts and opinions is oration. It allows us to form
+                        connections,
+                        influence decisions, and motivate change. </p>
+                    <!-- <button>Read more</button> -->
+                </div>
+            </article>
+            <article style="background-color: 
+            #fff2dd;  border: black solid 3px;" class="card">
+                <img src="{% static 'images/ap1 (1).jpg' %}" alt="Sample photo" style="border: black solid 5px;">
+                <div class="text">
+                    <br>
+                    <h3>Singing</h3>
+                    <p>Expression your emotions through music is singing. It tests the combination of fluency, speed and
+                        of
+                        voice.</p>
+                    <!-- <button>Just do it...</button> -->
+                </div>
+            </article>
+            <article style="background-color: 
+            #fff2dd;  border: black solid 3px;" class="card">
+                <img src="{% static 'images/ap1 (6).jpg' %}" alt="Sample photo"
+                    style="max-height: 230px; border: black solid 5px;">
+                <div class="text">
+                    <br>
+                    <h3>Poster Making</h3>
+                    <p>Art is nothing but the expression of human imagination, visualization and thought processing. Art
+                        is the
+                        only field where creativity comes out with shining results.</p>
+                    <!-- <button>Here's why</button> -->
+                </div>
+            </article>
+            <article style="background-color: 
+            #fff2dd;  border: black solid 3px;" class="card">
+                <img src="{% static 'images/ap1.jpg' %}" alt="Sample photo" style="border: black solid 5px;">
+                <div class="text">
+                    <br>
+                    <h3>Fancy Dress Competition</h3>
+                    <p>Fancy dress is one of the most exciting things for young ones. They love to dress apart and
+                        resemble
+                        their favourite animal, fruit or any cartoon character.</p>
+                    <!-- <button>Stop here</button> -->
+                </div>
+            </article>
 
-        <div class="row" style="border: white 5px dotted;">
+            <article style="background-color: 
+            #fff2dd; border: black solid 3px; " class="card">
+                <img src="{% static 'images/mono.jpg' %}" alt="Sample photo" style="border: black solid 5px;">
+                <div class="text">
+                    <br>
+                    <h3>Mono/Duet Act</h3>
+                    <p>We often do not completely understand all the emotions that are conveyed to us. Acting
+                        is the most powerful form to communicate and interact with the masses.</p>
 
+                </div>
+            </article>
+            <article style="background-color: 
+            #fff2dd; border: black solid 3px;" class="card">
+                <img src="{% static 'images/essay.jpg' %}" alt="Sample photo" style="border: black solid 5px;">
+                <div class="text">
+                    <br>
+                    <h3>Essay Writing</h3>
+                    <p>Essay writing is the best method to check how well a student can describe his thoughts with
+                        respect to
+                        any given topic.
+                    </p>
 
-            <div class="col-md-6" style="padding:40px; font-size: 20px;">
-                <br>
-                <br>
-                <br>
-                <h4 style="text-decoration: underline white;">Young Innoverse Challenge</h4>
-                Every participant of Antyodaya would be required to submit an innovative approach to the given problem
-                statements that deal with daunting social problems
-            </div>
-            <div class="col-md-6" style="padding:40px"><img src="{% static 'images/ap (4).jpg' %}" width="400px"
-                    height="300px" style="border: 3px solid white; border-radius:5px;"></div>
-        </div>
-        <br>
-        <div class="row" style="border: white 5px dotted;">
-            <div class="col-md-6" style="padding:40px; font-size: 20px;">
-                <br>
-                <br>
-                <h4 style="text-decoration: underline white;">Oration</h4>
-                The art of delivering your views, thoughts and opinions is oration. It allows us to form connections,
-                influence decisions, and motivate change. This event is scheduled to be conducted in both Hindi and
-                English language.
-            </div>
-            <div class="col-md-6" style="padding:40px"><img src="{% static 'images/ap (3).jpg' %}" width="400px"
-                    height="300px" style="border: 3px solid white; border-radius:5px;"></div>
-        </div>
-        <br>
-        <div class="row" style="border: white 5px dotted;">
-            <div class="col-md-6" style="padding:40px; font-size: 20px;">
-                <br>
-                <br>
-                <h4 style="text-decoration: underline white;">Singing</h4>
-                Expression your emotions through music is singing. It tests the combination of fluency, speed and of
-                voice. Antyodaya team conducts mono/duet singing and give chance to children to show their talent
-                through singing.
-            </div>
-            <div class="col-md-6" style="padding:40px"><img src="{% static 'images/ap1 (1).jpg' %}" width="400px"
-                    height="300px" style="border: 3px solid white; border-radius:5px;"></div>
-        </div>
-        <br>
-        <div class="row" style="border: white 5px dotted;">
-            <div class="col-md-6" style="padding:40px; font-size: 20px;">
-                <br>
-                <br>
-                <br>
+                </div>
+            </article>
+            <article style="background-color: 
+            #fff2dd; border: black solid 3px;" class="card">
+                <img src="{% static 'images/ap (2).jpg' %}" alt="Sample photo" style="border: black solid 5px;">
+                <div class="text">
+                    <br>
+                    <h3>Sports Events</h3>
+                    <p>Sports is as important as academics. Every student often foregoes physical fitness to build
+                        mental
+                        fortitude not realising that both often are as important in forming their brains</p>
 
-                <h4 style="text-decoration: underline white;">Poster Making</h4>
-                Art is nothing but the expression of human imagination, visualization and thought processing. Art is the
-                only field where creativity comes out with shining results.
-            </div>
-            <div class="col-md-6" style="padding:40px"><img src="{% static 'images/ap1 (6).jpg' %}" width="400px"
-                    height="300px" style="border: 3px solid white; border-radius:5px;"></div>
-        </div>
-        <br>
-        <div class="row" style="border: white 5px dotted;">
-            <div class="col-md-6" style="padding:40px; font-size: 20px;">
-                <br>
-                <br>
-                <br>
-                <h4 style="text-decoration: underline white;">Fancy Dress Competition</h4>
-                Fancy dress is one of the most exciting things for young ones. They love to dress apart and resemble
-                their favourite animal, fruit or any cartoon character.
-            </div>
-            <div class="col-md-6" style="padding:40px"><img src="{% static 'images/ap1.jpg' %}" width="400px"
-                    height="300px" style="border: 3px solid white; border-radius:5px;"></div>
-        </div>
-        <br>
-        <div class="row" style="border: white 5px dotted;">
-            <div class="col-md-6" style="padding:40px; font-size: 20px;">
-                <br>
-                <br>
-                <br>
-                <h4 style="text-decoration: underline white;">Games</h4>
-                A game is a system in which players engage in an artificial conflict, defined by rules, that results in
-                a quantifiable outcome.A game is a form of art.
-            </div>
-            <div class="col-md-6" style="padding:40px" ><img src="{% static 'images/ap (1).jpg' %}" width="400px"
-                    height="300px" style="border: 3px solid white; border-radius:5px;" ></div>
-        </div>
-        <br>
-        <div class="row" style="border: white 5px dotted;">
-            <div class="col-md-6" style="padding:40px; font-size: 20px;"><br>
-                <br>
-                <br>
-                <h4 style="text-decoration: underline white;">Mono/Duet Act</h4>
+                </div>
+            </article>
 
-                We often do not completely understand all the emotions that are conveyed to us. Acting helps us live in
-                those moments, it is thus the most powerful form to communicate and interact with the masses.
-            </div>
-            <div class="col-md-6" style="padding:40px"><img src="{% static 'images/ap1 (2).jpg' %}" width="400px"
-                    height="300px" style="border: 3px solid white; border-radius:5px;"></div>
-        </div>
-        <br>
-        <div class="row" style="border: white 5px dotted;">
-            <div class="col-md-6" style="padding:40px; font-size: 20px;">
-                <br>
-                <br>
-                <h4 style="text-decoration: underline white;">Essay Writing</h4>
-                Essay writing is the best method to check how well a student can describe his thoughts with respect to
-                any given topic. This is why essay writing competition is scheduled for both junior and senior group.
-                The competition is distinctly conducted in two languages, i.e, English and Hindi.
-            </div>
-            <div class="col-md-6" style="padding:40px"><img src="{% static 'images/4.jpg' %}" width="400px"
-                    height="300px" style="border: 3px solid white; border-radius:5px;"></div>
-        </div>
-        <br>
-        <div class="row" style="border: white 5px dotted;">
-            <div class="col-md-6" style="padding:40px; font-size: 20px;">
-                <br>
-                <br>
-                <br>
-                <h4 style="text-decoration: underline white;">Sports Events</h4>
-                (Race , Chess , slow cycling)
-                Sports is as important as academics. Every student often foregoes physical fitness to build mental
-                fortitude not realising that both often are as important in forming their brains
-            </div>
-            <div class="col-md-6" style="padding:40px"><img src="{% static 'images/ap (2).jpg' %}" width="400px"
-                    height="300px" style="border: 3px solid white; border-radius:5px;"></div>
-        </div>
-    </div>
-
-    <br>
-    <br>
-
-
-</div>
-</div>
-
-
-<div class="page-header"
-    style="background-image: url(https://color-hex.org/colors/f4816f.png);">
-    <br>
-    <br>
-    <div class="container" style="border: white 5px dotted;">
-        <br>
-        <br>
-        <h1 style="text-align: center; color: white; ">Prize Distributions</h1>
-
-        <div class="row">
-            <div class="col-md-6" style="padding:40px; color: white; font-size: 20px;">
-                <br>
-                <br>
-                <b>Winners of anokhi पहल were awarded Certificate of achievement for
-                    outstanding efforts to help protect and preserve the environment(young innoverse challenge).
-                    Some children are unable to find out that in which side (technical,cultural etc) they can do
-                    best.</b>
-
-
-            </div>
-            <div class="col-md-6" style="padding:40px"><img src="{% static 'images/ap13.jpeg' %}" width="400px"
-                    height="300px" style="border: 3px solid white; border-radius:5px;"></div>
-        </div>
-    </div>
-
-    <br>
-
-
-    <div class="container" style="border: white 5px dotted;">
-        <br>
-        <br>
-
-        <h1 style="text-align: center; color: white;">Food Distributions</h1>
-
-        <div class="row">
-
-            <div class="col-md-6" style="padding:40px; color: white; font-size: 20px;">
-                <br>
-                <br>
-                <br>
-                <b>
+            <article class="card" style="background-color: 
+            #fff2dd; border: black solid 3px;">
+                <img src="{% static 'images/ap13.jpeg' %}" alt="Sample photo" style="border: black solid 5px;">
+                <div class="text">
+                    <br>
+                    <br>
+                    <h3>Prize Distributions</h3>
+                    <p>Winners of anokhi पहल were awarded Certificate of achievement for
+                        outstanding efforts to help protect and preserve the environment(young innoverse challenge).
+                        Some children are unable to find out that in which side (technical,cultural etc) they can do
+                        best.</p>
+                </div>
+            </article>
+            <article class="card" style="background-color: 
+            #fff2dd; border: black solid 3px;">
+                <img src="{% static 'images/khana.jpg' %}" alt="Sample photo" style="border: black solid 5px;">
+                <div class="text">
+                    <br>
+                    <h3>Food Distributions</h3>
                     As Antyodaya is one day event. After completing all the events
                     ,children got tired so to make them enthusiastic again at the prize distribution, food packets are
                     given
                     to them.
-                </b>
-            </div>
-            <div class="col-md-6" style="padding:40px"><img src="{% static 'images/food.jpg' %}" width="400px"
-                    height="300px" style="border: 3px solid white; border-radius:5px;"></div>
+                </div>
+            </article>
+        </main>
 
-        </div>
+
 
     </div>
+
     <br>
     <br>
+
+
 </div>
-
-
+</div>
 
 
 <!-- .container -->
@@ -356,57 +325,67 @@
                 data-title="
           Chess is quite like a brain tonic which enhances concentration, patience, and perseverance, as well as develops creativity, intuition, memory, and most importantly, the ability to process and extract information from a set of general principles, learning to make tough decisions and solving problems flexibly.">
 
-                <img src="https://i.postimg.cc/R0SJNYnb/chess-anto.jpg" data-lightbox="models" style="border: 2px solid black; border-radius:5px;"/>
+                <img src="https://i.postimg.cc/R0SJNYnb/chess-anto.jpg" data-lightbox="models"
+                    style="border: 2px solid black; border-radius:5px;" />
 
                 <a href="https://i.postimg.cc/BnFYpMNg/poster-Anto.jpg" data-lightbox="models"
                     data-title="	
           Poster Making:
           Art is nothing but the expression of human imagination, visualization and thought processing. Art is the only field where creativity comes out with shining results.">
-                    <img src="https://i.postimg.cc/BnFYpMNg/poster-Anto.jpg" data-lightbox="models" style="border: 2px solid black; border-radius:5px;"/>
+                    <img src="https://i.postimg.cc/BnFYpMNg/poster-Anto.jpg" data-lightbox="models"
+                        style="border: 2px solid black; border-radius:5px;" />
                 </a>
                 <a href="https://i.postimg.cc/JhqDZHDq/dance-Antoo.jpg" data-lightbox="models"
                     data-title="Mono/Duet Act:
           We often do not completely understand all the emotions that are conveyed to us. Acting helps us live in those moments, it is thus the most powerful form to communicate and interact with the masses.">
-                    <img src="https://i.postimg.cc/JhqDZHDq/dance-Antoo.jpg" data-lightbox="models" style="border: 2px solid black; border-radius:5px;"/>
+                    <img src="https://i.postimg.cc/JhqDZHDq/dance-Antoo.jpg" data-lightbox="models"
+                        style="border: 2px solid black; border-radius:5px;" />
                 </a>
                 <a href="https://i.postimg.cc/tC4wy3kd/singing-Anto.jpg" data-lightbox="models"
                     data-title="	
       
           Oration:
           The art of delivering your views, thoughts and opinions is oration. It allows us to form connections, influence decisions, and motivate change. This event is scheduled to be conducted in both Hindi and English language.">
-                    <img src="https://i.postimg.cc/tC4wy3kd/singing-Anto.jpg" data-lightbox="models" style="border: 2px solid black; border-radius:5px;"/>
+                    <img src="https://i.postimg.cc/tC4wy3kd/singing-Anto.jpg" data-lightbox="models"
+                        style="border: 2px solid black; border-radius:5px;" />
                 </a>
                 <a href="https://i.postimg.cc/Twj6pnKd/fancydress-anto.jpg" data-lightbox="models"
                     data-title="Fancy Dress Competition:
           Fancy dress is one of the most exciting things for young ones. They love to dress apart and resemble their favourite animal, fruit or any cartoon character.">
-                    <img src="https://i.postimg.cc/Twj6pnKd/fancydress-anto.jpg" data-lightbox="models" style="border: 2px solid black; border-radius:5px;"/>
+                    <img src="https://i.postimg.cc/Twj6pnKd/fancydress-anto.jpg" data-lightbox="models"
+                        style="border: 2px solid black; border-radius:5px;" />
                 </a>
-                <a href="https://i.postimg.cc/rwR7D5HB/innov.jpg" data-lightbox="models"
+                <a href="{% static 'images/36.jpg' %}" data-lightbox="models"
                     data-title="Young Innoverse Challenge:
           Every participant of Antyodaya would be required to submit an innovative approach to the given problem statements that deal with daunting social problems.">
-                    <img src="https://i.postimg.cc/rwR7D5HB/innov.jpg" data-lightbox="models" style="border: 2px solid black; border-radius:5px;"/>
+                    <img src="{% static 'images/36.jpg' %}" data-lightbox="models"
+                        style="border: 2px solid black; border-radius:5px;" />
                 </a>
                 <a href="https://i.postimg.cc/1zTV5hL0/anokhiteam-anto.jpg" data-lightbox="models"
                     data-title="Anokhi Pehel">
-                    <img src="https://i.postimg.cc/1zTV5hL0/anokhiteam-anto.jpg" data-lightbox="models" style="border: 2px solid black; border-radius:5px;"/>
+                    <img src="https://i.postimg.cc/1zTV5hL0/anokhiteam-anto.jpg" data-lightbox="models"
+                        style="border: 2px solid black; border-radius:5px;" />
                 </a>
                 <a href="https://i.postimg.cc/mgKVJq8q/games-Anto.jpg" data-lightbox="models"
                     data-title="Games:
           A game is a system in which players engage in an artificial conflict, defined by rules, that results in a quantifiable outcome.A game is a form of art.">
-                    <img src="https://i.postimg.cc/mgKVJq8q/games-Anto.jpg" data-lightbox="models" style="border: 2px solid black; border-radius:5px;"/>
+                    <img src="https://i.postimg.cc/mgKVJq8q/games-Anto.jpg" data-lightbox="models"
+                        style="border: 2px solid black; border-radius:5px;" />
                 </a>
 
                 <a href="https://i.postimg.cc/wBBK63NP/essay-anto.jpg" data-lightbox="models"
                     data-title="	
         Essay Writing:
         Essay writing is the best method to check how well a student can describe his thoughts with respect to any given topic. This is why essay writing competition is scheduled for both junior and senior group. The competition is distinctly conducted in two languages, i.e, English and Hindi.">
-                    <img src="https://i.postimg.cc/wBBK63NP/essay-anto.jpg" data-lightbox="models"style="border: 2px solid black; border-radius:5px;" />
+                    <img src="https://i.postimg.cc/wBBK63NP/essay-anto.jpg" data-lightbox="models"
+                        style="border: 2px solid black; border-radius:5px;" />
                 </a>
                 <a href="https://i.postimg.cc/Jzv3h2HL/racing-Anto.jpg" data-lightbox="models"
                     data-title="	
       Sports Events (Race, Chess, slow cycling):
       Sports are as important as academics. Every student often foregoes physical fitness to build mental fortitude not realising that both often are as important in forming their brains">
-                    <img src="https://i.postimg.cc/Jzv3h2HL/racing-Anto.jpg" data-lightbox="models" style="border: 2px solid black; border-radius:5px;"/>
+                    <img src="https://i.postimg.cc/Jzv3h2HL/racing-Anto.jpg" data-lightbox="models"
+                        style="border: 2px solid black; border-radius:5px;" />
                 </a>
 
 
@@ -415,13 +394,15 @@
     Note - All events will be held in Online Mode::
    We intended to bring the same exuberant smile on their faces that year around too. After all, absence does make the heart grow fonder and we planned on bringing the same level of excitement to each of our students.">
 
-                    <img src="https://i.postimg.cc/tTWGcwWC/online-anto-poster.png" data-lightbox="models" style="border: 2px solid black; border-radius:5px;"/>
+                    <img src="https://i.postimg.cc/tTWGcwWC/online-anto-poster.png" data-lightbox="models"
+                        style="border: 2px solid black; border-radius:5px;" />
                 </a>
 
 
                 <a href="https://i.postimg.cc/FKkMf8Pg/ludo-online-Anto.png" data-lightbox="models" data-title="	online activities.
   ">
-                    <img src="https://i.postimg.cc/FKkMf8Pg/ludo-online-Anto.png" data-lightbox="models" style="border: 2px solid black; border-radius:5px;"/>
+                    <img src="https://i.postimg.cc/FKkMf8Pg/ludo-online-Anto.png" data-lightbox="models"
+                        style="border: 2px solid black; border-radius:5px;" />
                 </a>
         </div>
     </div>

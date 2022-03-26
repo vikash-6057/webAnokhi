@@ -1,9 +1,19 @@
 {%extends 'base.html' %}
 {% load staticfiles %}
 {%block content%}
-<div class="page-header" style="background-image: url(https://cdn.wallpapersafari.com/25/14/Dljuh1.jpg);">
+
+<style>
+    .evimg{
+        width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: bottom;
+
+    }
+</style>
+<div class="page-header" style="background-color: #bd7447">
     <br>
-    <h1 style="text-align:center; color: white;">EVENING CLASS</h1>
+    <h1 style="text-align:center; color: white;">CLASSES</h1>
     <br>
     <i>
         <div class="container">
@@ -42,8 +52,7 @@
                                         class="col-12 col-lg-8 d-flex flex-column justify-content-center align-items-start">
                                         <header class="entry-header">
 
-                                            <h4>“Bhaiya padhne ka mann nahi kar rah, Bhaiya-accha chalo ek game khelte
-                                                hain…"</h4>
+                                            
                                         </header><!-- .entry-header -->
 
                                         <div class="entry-content mt-4">
@@ -64,7 +73,6 @@
                                         class="col-12 col-lg-8 d-flex flex-column justify-content-center align-items-start">
                                         <header class="entry-header">
 
-                                            <h4>"A person who never made a mistake never tried anything new."</h4>
                                         </header><!-- .entry-header -->
 
                                         <div class="entry-content mt-4">
@@ -85,7 +93,7 @@
                 </div> -->
 
                 <!-- Add Arrows -->
-                <!-- <div class="swiper-button-next flex justify-content-center align-items-center">
+                <div class="swiper-button-next flex justify-content-center align-items-center">
                     <span><svg viewBox="0 0 1792 1792" xmlns="http://www.w3.org/2000/svg">
                             <path
                                 d="M1171 960q0 13-10 23l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23z" />
@@ -97,7 +105,7 @@
                             <path
                                 d="M1203 544q0 13-10 23l-393 393 393 393q10 10 10 23t-10 23l-50 50q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l466-466q10-10 23-10t23 10l50 50q10 10 10 23z" />
                         </svg></span>
-                </div> -->
+                </div>
             </div>
         </div>
     </i>
@@ -128,7 +136,7 @@
     <br>
     <div class="page-header" >
     <div class="container" >
-        <img style="height: auto; width: auto; max-width: 1200px; max-height: 1700px;" src="{% static 'images/37.jpg' %}" alt="">
+        <img class="evimg" style=" display:block; margin-left: auto; margin-right: auto; height: auto; width: 80%; max-width: 900px; max-height: 1700px; position: center center;" src="{% static 'images/37.jpg' %}" alt="">
     </div>
     </div>
 </div>
